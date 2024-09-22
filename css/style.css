@@ -13,20 +13,25 @@ a {
     color: inherit;
 }
 
+/* Default navbar styling for larger screens */
+/* Default navbar styling for larger screens */
 .navbar {
     height: 80px;
     width: 100%;
     background-color: rgb(255, 255, 255);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 1vw 2vw;
     align-items: center;
-    gap: 8vw;
     position: fixed;
-    top: 1px;
+    top: 0;
     left: 0;
 }
 
+.nav-img img {
+    height: 80px;
+    width: 80px;
+}
 
 .nav-btn ul {
     display: flex;
@@ -50,22 +55,148 @@ a {
     text-align: center;
 }
 
-/* Navigation bar */
-nav {
-    background-color: #003366;
-    padding: 1rem;
+/* Menu icon hidden by default */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 2vw;
+}
+
+/* Media query for screens 768px and smaller */
+@media (max-width: 768px) {
+    .nav-btn ul {
+        display: none; /* Hide by default */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #003366; /* Background color for the menu */
+        padding: 20px; /* Add some padding */
+        position: absolute; /* Position it under the navbar */
+        top: 80px; /* Below the navbar */
+        right: 0; /* Align to the right */
+        width: 100%; /* Full width */
+        z-index: 1000; /* Ensure it's above other elements */
+    }
+
+    .nav-btn ul.show {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .nav-btn li {
+        text-align: left;
+        margin: 10px 0;
+        font-size: 5vw; /* Increase font size for mobile */
+        color: white; /* Text color */
+    }
+
+    .nav-btn ul .close-btn {
+        font-size: 5vw;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+        color: white; /* Close button color */
+    }
+
+    /* Menu icon for smaller screens */
+    .menu-icon {
+        display: block;
+        font-size: 6vw;
+        color: #003366; /* Icon color */
+    }
+}
+/* Default navbar styling for larger screens */
+.navbar {
+    height: 80px;
     width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw 2vw;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: space-between;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
+.nav-img img {
+    height: 80px;
+    width: 80px;
+}
+
+.nav-btn ul {
+    display: flex;
+    list-style: none;
+    gap: 4vw;
+}
+
+.nav-btn li {
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.nav-btn button {
+    background-color: #1B709A;
+    padding: 0.5vw 0.8vw;
+    color: #fff;
+    border: 1px solid #1B709A;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    margin-top: -10px;
+    text-align: center;
+}
+
+/* Menu icon hidden by default */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 2vw;
+}
+
+/* Media query for screens 768px and smaller */
+@media (max-width: 768px) {
+    .navbar{
+        padding: 2vw 8vw;
+    }
+    .nav-btn ul {
+        display: none; /* Hide by default */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #003366; /* Background color for the menu */
+        padding: 20px; /* Add some padding */
+        position: absolute; /* Position it under the navbar */
+        top: 80px; /* Below the navbar */
+        right: 0; /* Align to the right */
+        width: 100%; /* Full width */
+        z-index: 1000; /* Ensure it's above other elements */
+    }
+
+    .nav-btn ul.show {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .nav-btn li {
+        text-align: left;
+        margin: 10px 0;
+        font-size: 5vw; /* Increase font size for mobile */
+        color: white; /* Text color */
+    }
+
+    .nav-btn ul .close-btn {
+        font-size: 5vw;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+        color: white; /* Close button color */
+    }
+    .nav-img img{
+        height: 200px;
+        width: 200px;
+    }
+    /* Menu icon for smaller screens */
+    .menu-icon {
+        display: block;
+        font-size: 10vw;
+        color: #003366; /* Icon color */
+    }
 }
 
 /* Button to open form */
@@ -144,6 +275,9 @@ nav a {
     width: 100%;
     background-image: url("https://res.cloudinary.com/eduminatti-com/image/upload/v1725877211/Edu123/Eduimages/landing.png");
     /* background-color: red; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .headfont {
@@ -154,7 +288,7 @@ nav a {
     color: #000;
 }
 
-.headfont p {}
+
 
 .text {
     color: #02618f;
@@ -168,23 +302,21 @@ nav a {
 
 .input {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     height: 60px;
     width: 1300px;
     align-items: flex-start;
     margin-top: -10px;
     cursor: pointer;
-
+    margin-left: -130px;
 }
 
 .school {
-    height: 60px;
-    width: 601px;
-    /* border:1px solid green; */
     padding: 1vw;
-    margin: 6px -12px 0px 55px;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
 }
 
 .s-type {
@@ -241,13 +373,15 @@ nav a {
 }
 
 .school-search {
-    padding: 2vw;
     position: relative;
-    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    padding: 2vw;
 }
 
 .school-search p {
-    text-align: center;
+    margin-top: -10px;
+
 }
 
 .select {
@@ -344,6 +478,76 @@ nav a {
 .select {
     /* display: none; */
 }
+.headfont p {
+    margin: 0; /* Remove default margin to align text properly */
+    line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+    .main{
+        /* border: 2px solid red; */
+        display: flex;
+        width: 1280px;
+        flex-wrap: wrap;
+        background-image: url("https://res.cloudinary.com/eduminatti-com/image/upload/v1725877211/Edu123/Eduimages/landing.png");
+    }}
+@media (max-width:768px) {
+    .feature {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6vw;
+    }
+}
+@media (max-width:576px) {
+    .feature {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6vw;
+    }
+}
+@media (max-width: 1024px) {
+    .input {
+        display: flex; /* Keep flex display */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: stretch; /* Ensure items stretch to full width */
+        width: 100%; /* Full width */
+        flex-wrap: wrap;
+    }
+
+
+
+    .school {
+        width: 100%; /* Full width for the school container */
+        /* margin: 10px 0; Space between inputs */
+        display: flex;
+        flex-direction: column;
+        /* margin-left: 20px; */
+    }
+
+    .s-type, .l-type, .school-search {
+        width: 100%; /* Ensure each section takes full width */
+        margin: 10px 0; /* Space between sections */
+        padding: 1vw; /* Adjust padding */
+        margin-left: 30px;
+    }
+    .headfont{
+        margin-top: 130px;
+        margin-left: 30px;
+    }
+    .school p{
+        font-size: 3vw;
+    }
+    .iop{
+        text-align: center;
+    }
+    .school i{
+        display: none;
+    }
+
+}
 
 
 .feature-section {
@@ -360,7 +564,7 @@ nav a {
     justify-content: space-around;
     margin-top: 50px;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .feature-section img {
@@ -394,7 +598,15 @@ nav a {
     margin-top: 30px;
     padding: 2vw;
 }
-
+@media (max-width:576px) {
+    .serchby {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6vw;
+    }
+}
 .cities h1 {
     margin-left: 40px;
 }

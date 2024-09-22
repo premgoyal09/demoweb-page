@@ -10,38 +10,61 @@
 // })
 
 
+// navbar 
+const menuIcon = document.querySelector('.menu-icon span');
+const navLinks = document.querySelector('.nav-btn ul');
+const closeBtn = document.querySelector('.close-btn');
+
+// Toggle menu on click
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+// Close menu on close button click
+closeBtn.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+});
+
+
+
 
 
 // get consultation
 
-        // Get elements
-        const modal = document.getElementById('consultationModal');
-        const openModalBtn = document.querySelector('.get-consultation');
-        const closeModalBtn = document.getElementById('closeBtn');
-        const bookConsultationBtn = document.getElementById('bookConsultation');
+// Get elements
+const modal = document.getElementById('consultationModal');
+const openModalBtn = document.querySelector('.get-consultation');
+const closeModalBtn = document.getElementById('closeBtn');
+const bookConsultationBtn = document.getElementById('bookConsultation');
 
-        // Open modal on button click
-        openModalBtn.addEventListener('click', function () {
-            modal.style.display = 'flex';
-        });
+// Open modal on button click
+openModalBtn.addEventListener('click', function () {
+    modal.style.display = 'flex';
+});
 
-        // Close modal on close button click
-        closeModalBtn.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
+// Close modal on close button click
+closeModalBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+});
 
-        // Close modal if user clicks outside the modal content
-        window.addEventListener('click', function (e) {
-            if (e.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
+// Close modal if user clicks outside the modal content
+window.addEventListener('click', function (e) {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+});
 
-        // Close modal on "Book Consultation" button click
-        bookConsultationBtn.addEventListener('click', function () {
-            alert('Consultation Booked!'); // You can replace this with form submission logic.
-            modal.style.display = 'none';
-        });
+
+
+
+
+
+// main page  to select school and location
+// Close modal on "Book Consultation" button click
+bookConsultationBtn.addEventListener('click', function () {
+    alert('Consultation Booked!'); // You can replace this with form submission logic.
+    modal.style.display = 'none';
+});
 
 // Event listeners for "School Type" and "Location" clicks
 document.querySelector('.s-type').addEventListener('click', function () {
